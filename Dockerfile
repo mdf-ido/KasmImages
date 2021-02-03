@@ -14,7 +14,7 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
 RUN apt-get update && apt-get install -y powershell
 
 #Install VSCode
-RUN  wget -qO https://packages.microsoft.com/keys/microsoft.asc -o microsoft.asc | apt-key add microsoft.asc \
+RUN  wget -qO https://packages.microsoft.com/keys/microsoft.asc -o microsoft.asc | apt-key add - \
     && echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"  | tee /etc/apt/sources.list.d/vscode.list 
 RUN apt-get update && apt-get install -y code
 
