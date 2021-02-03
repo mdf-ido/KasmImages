@@ -11,11 +11,8 @@ WORKDIR $HOME
 
 RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
 # Register the Microsoft 1repository GPG keys
-&& dpkg -i packages-microsoft-prod.deb \
+&& dpkg -i packages-microsoft-prod.deb
 # Enable the "universe" repositories
-&& add-apt-repository universe \
-# Install PowerShell
-&& apt-get install -y powershell
 
 RUN pwsh Install-Module -Name AWS.Tools.Installer -Force
 RUN pwsh Install-Module -Name Az -AllowClobber -Scope AllUsers -Force
