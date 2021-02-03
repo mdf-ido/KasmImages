@@ -10,10 +10,11 @@ WORKDIR $HOME
 
 
 RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
-# Register the Microsoft 1repository GPG keys
-&& dpkg -i packages-microsoft-prod.deb
-# Enable the "universe" repositories
+    && dpkg -i packages-microsoft-prod.deb
 RUN apt-get update && apt-get install -y powershell
+RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+RUN apt-get update && apt-get install -y code
 
 
 ######### End Customizations ###########
