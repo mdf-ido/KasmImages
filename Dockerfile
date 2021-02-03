@@ -13,10 +13,7 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
 # Register the Microsoft 1repository GPG keys
 && dpkg -i packages-microsoft-prod.deb
 # Enable the "universe" repositories
-RUN apt-get update && apt-get install -y \
-    libunwind8 \
-    libicu55 \
-    powershell
+RUN apt-get update && apt-get install -y powershell
 
 
 ######### End Customizations ###########
