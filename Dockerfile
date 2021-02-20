@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y powershell
 
 #Install Citrix Workspace App
 RUN apt-get update && apt-get install -y libwebkit2gtk-4.0-37
-RUN curl https://downloads.citrix.com/19130/icaclient_21.1.0.14_amd64.deb?__gda__=1613797686_3bffb96b1e44eec5d0228040cca796bf -o ctxwrkspace.deb \
+RUN curl https://downloads.citrix.com/19130/icaclient_21.1.0.14_amd64.deb?__gda__=1613807245_b422f58c8bb3c7475d6fb7200cec2ac7 -o ctxwrkspace.deb \
     && dpkg -i ctxwrkspace.deb
 
 #Add background
