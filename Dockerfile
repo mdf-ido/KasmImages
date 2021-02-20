@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y powershell
 
 #Install Citrix Workspace App
 RUN curl https://downloads.citrix.com/19130/icaclient_21.1.0.14_amd64.deb?__gda__=1613797686_3bffb96b1e44eec5d0228040cca796bf -o ctxwrkspace.deb \
-    && dpkg -i ctxwrkspace.deb; apt -f install
+    && dpkg -i ctxwrkspace.deb; apt-get -f install && dpkg -i ctxwrkspace.deb
 
 #Add background
 RUN wget https://github.com/m05tr0-DevOps/KasmImages/blob/main/IMG_20201107_134647_Bokeh.jpg?raw=true -O $HOME/.config/bg_kasm.png
