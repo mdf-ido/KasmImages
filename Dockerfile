@@ -21,6 +21,12 @@ RUN curl https://downloads.citrix.com/16914/icaclient_19.12.0.19_amd64.deb?__gda
 #Add background
 RUN wget https://github.com/m05tr0-DevOps/KasmImages/blob/main/IMG_20201107_134647_Bokeh.jpg?raw=true -O $HOME/.config/bg_kasm.png
 
+# Install Firefox
+COPY ./src/ubuntu/install/firefox/ $INST_SCRIPTS/firefox/
+COPY ./src/ubuntu/install/firefox/firefox.desktop $HOME/Desktop/
+RUN bash $INST_SCRIPTS/firefox/install_firefox.sh && rm -rf $INST_SCRIPTS/firefox/
+
+
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
