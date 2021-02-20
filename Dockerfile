@@ -7,13 +7,15 @@ ENV INST_SCRIPTS $STARTUPDIR/install
 WORKDIR $HOME
 
 ######### Customize Container Here ###########
+RUN apt-get update
 
 ##Install Posh
 RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
     && dpkg -i packages-microsoft-prod.deb
-RUN apt-get update && apt-get install -y powershell
+RUN apt-get install -y powershell
 
 #Install Citrix Workspace App
+RUN apt-get install -y libwebkit2gtk-4.0-37
 RUN curl https://downloads.citrix.com/19130/icaclient_21.1.0.14_amd64.deb?__gda__=1613797686_3bffb96b1e44eec5d0228040cca796bf -o ctxwrkspace.deb \
     && dpkg -i ctxwrkspace.deb; apt-get -f install && dpkg -i ctxwrkspace.deb
 
