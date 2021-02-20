@@ -13,9 +13,9 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
     && dpkg -i packages-microsoft-prod.deb
 RUN apt-get update && apt-get install -y powershell
 
-#Install VSCode
-RUN wget -q https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 \
-    && dpkg -i code_*.deb; apt -f install
+#Install Citrix Workspace App
+RUN curl https://downloads.citrix.com/19130/icaclient_21.1.0.14_amd64.deb?__gda__=1613797686_3bffb96b1e44eec5d0228040cca796bf -o ctxwrkspace.deb \
+    && dpkg -i ctxwrkspace.deb; apt -f install
 
 #Add background
 RUN wget https://github.com/m05tr0-DevOps/KasmImages/blob/main/IMG_20201107_134647_Bokeh.jpg?raw=true -O $HOME/.config/bg_kasm.png
@@ -30,6 +30,3 @@ WORKDIR $HOME
 RUN mkdir -p $HOME && chown -R 1000:0 $HOME
 
 USER 1000
-
-
-
