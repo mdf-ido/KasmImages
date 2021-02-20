@@ -18,13 +18,12 @@ RUN apt-get update && apt-get install -y libwebkit2gtk-4.0-37
 RUN curl https://downloads.citrix.com/16914/icaclient_19.12.0.19_amd64.deb?__gda__=1613810179_00246b12c339987371394f1ed5f175bd -o ctxwrkspace.deb \
     && dpkg -i ctxwrkspace.deb 
 
+# Install Google Chrome
+COPY ./src/ubuntu/install/chrome $INST_SCRIPTS/chrome/
+RUN bash $INST_SCRIPTS/chrome/install_chrome.sh  && rm -rf $INST_SCRIPTS/chrome/
+
 #Add background
 RUN wget https://github.com/m05tr0-DevOps/KasmImages/blob/main/IMG_20201107_134647_Bokeh.jpg?raw=true -O $HOME/.config/bg_kasm.png
-
-# Install Firefox
-COPY ./src/ubuntu/install/firefox/ $INST_SCRIPTS/firefox/
-COPY ./src/ubuntu/install/firefox/firefox.desktop $HOME/Desktop/
-RUN bash $INST_SCRIPTS/firefox/install_firefox.sh && rm -rf $INST_SCRIPTS/firefox/
 
 
 ######### End Customizations ###########
