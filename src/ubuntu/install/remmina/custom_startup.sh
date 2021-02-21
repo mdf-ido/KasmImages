@@ -10,7 +10,7 @@ if ( [ -z "$DISABLE_CUSTOM_STARTUP" ] ||  [ -n "$FORCE" ] ) ; then
     touch /tmp/custom_startup.lck
     while true
     do
-        if ! pgrep -x slack > /dev/null
+        if ! pgrep -x remmina > /dev/null
         then
             cd $HOME
             /usr/bin/desktop_ready
