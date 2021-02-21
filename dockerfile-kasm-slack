@@ -22,9 +22,7 @@ RUN bash $INST_SCRIPTS/slack/install_slack.sh  && rm -rf $INST_SCRIPTS/slack/
 #RUN python pip install keyboard
 
 # Enabled Single Application Mode - No desktop environment will be spawned
-COPY ./src/common/install/kasm/xfce_settings/xfce4-desktop-single-app.xml $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
-ENV SINGLE_APPLICATION=1
-RUN apt-get remove -y xfce4-panel
+
 
 #Custom startup script
 COPY ./src/ubuntu/install/slack/custom_startup.sh  $STARTUPDIR/custom_startup.sh
