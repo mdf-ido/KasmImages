@@ -1,4 +1,6 @@
-RUN apt-get update && apt-get install -y \
+#!/usr/bin/env bash
+
+apt-get update && apt-get install -y \
     apt-utils \
     dbus-x11 \
     dunst \
@@ -23,8 +25,7 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-
-RUN wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd64.deb -O /tmp/slack-desktop-2.1.0-amd64.deb && \
+wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd64.deb -O /tmp/slack-desktop-2.1.0-amd64.deb && \
     cd /tmp/ && \
     dpkg -i slack-desktop-2.1.0-amd64.deb && \
     rm -rf /tmp/slack-desktop*.deb

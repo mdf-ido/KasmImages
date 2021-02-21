@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y powershell
 
 #Install Citrix Workspace App
 RUN apt-get update && apt-get install -y libwebkit2gtk-4.0-37
-RUN curl https://downloads.citrix.com/16914/icaclient_19.12.0.19_amd64.deb?__gda__=1613810179_00246b12c339987371394f1ed5f175bd -o ctxwrkspace.deb \
+RUN curl https://downloads.citrix.com/16914/icaclient_19.12.0.19_amd64.deb?__gda__=1613901339_953019539b968104960cfc4a13be55b0 -o ctxwrkspace.deb \
     && dpkg -i ctxwrkspace.deb 
 
 # Install Google Chrome
