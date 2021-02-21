@@ -25,7 +25,9 @@ apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.13.0-amd64.deb -O /tmp/slack-desktop-2.1.0-amd64.deb && \
+wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.13.0-amd64.deb -O /tmp/slack-desktop-4.13.0-amd64.deb && \
     cd /tmp/ && \
-    dpkg -i slack-desktop-2.1.0-amd64.deb && \
+    dpkg -i slack-desktop-4.13.0-amd64.deb && \
+    apt-get install -f && \
+    dpkg -i slack-desktop-4.13.0-amd64.deb && \
     rm -rf /tmp/slack-desktop*.deb
