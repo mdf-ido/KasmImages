@@ -1,14 +1,3 @@
-FROM kasmweb/core:1.8.0
-USER root
-
-ENV HOME /home/kasm-default-profile
-ENV STARTUPDIR /dockerstartup
-ENV INST_SCRIPTS $STARTUPDIR/install
-WORKDIR $HOME
-
-######### Customize Container Here ###########
-
-
 RUN apt-get update && apt-get install -y \
     apt-utils \
     dbus-x11 \
@@ -39,20 +28,3 @@ RUN wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd
     cd /tmp/ && \
     dpkg -i slack-desktop-2.1.0-amd64.deb && \
     rm -rf /tmp/slack-desktop*.deb
-
-ENV QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
-
-# Autorun Slack
-CMD ["/usr/lib/slack/slack"]
-
-
-######### End Customizations ###########
-
-RUN chown 1000:0 $HOME
-RUN $STARTUPDIR/set_user_permission.sh $HOME
-
-ENV HOME /home/kasm-user
-WORKDIR $HOME
-RUN mkdir -p $HOME && chown -R 1000:0 $HOME
-
-USER 1000
