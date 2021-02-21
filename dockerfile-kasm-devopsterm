@@ -25,11 +25,6 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install azure-cli
 
-## Install Ansible
-RUN apt-add-repository ppa:ansible/ansible \
-    && apt-get update \
-    && apt install ansible 
-
 COPY ./src/ubuntu/install/terminal/custom_startup.sh $STARTUPDIR/custom_startup.sh
 RUN chmod +x $STARTUPDIR/custom_startup.sh
 RUN chmod 755 $STARTUPDIR/custom_startup.sh
