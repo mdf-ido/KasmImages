@@ -18,7 +18,7 @@ apt-get update && apt-get install -y \
     apt-transport-https \
     libgnome-keyring0 \
     gir1.2-gnomekeyring-1.0 \
-    libappindicator1 \
+    libappindicator3-1 \
     libasound2 \
     wget \
     --no-install-recommends && \
