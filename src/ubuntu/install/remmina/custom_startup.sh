@@ -14,7 +14,7 @@ if ( [ -z "$DISABLE_CUSTOM_STARTUP" ] ||  [ -n "$FORCE" ] ) ; then
         then
             cd $HOME
             /usr/bin/desktop_ready
-            remmmina
+            remmmina -k
         fi
         sleep 1
     done
