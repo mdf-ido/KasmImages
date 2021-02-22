@@ -10,3 +10,6 @@
 	remmina-plugin-vnc \
 	remmina-plugin-xdmcp && \
 apt-get clean
+
+cp /usr/share/applications/remmina-file.desktop $HOME/Desktop
+chown 1000:1000 $HOME/Desktop/remmina-file.desktop
