@@ -13,7 +13,7 @@ RUN apt-get update \
 && apt-get install -y xchat
 
 ##Custom start
-COPY ./src/ubuntu/xchat/custom_startup.sh  $STARTUPDIR/custom_startup.sh
+COPY ./src/ubuntu/install/xchat/custom_startup.sh  $STARTUPDIR/custom_startup.sh
 RUN chmod +x $STARTUPDIR/custom_startup.sh
 
 ######### End Customizations ###########
