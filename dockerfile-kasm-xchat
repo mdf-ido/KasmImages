@@ -1,4 +1,4 @@
-FROM kasmweb/core-ubuntu-focal:1.11.0
+FROM kasmweb/core-ubuntu-focal:1.12.0
 USER root
 
 ENV HOME /home/kasm-default-profile
@@ -14,6 +14,7 @@ RUN apt-get update \
 
 ##Custom start
 COPY ./src/ubuntu/install/xchat/custom_startup.sh  $STARTUPDIR/custom_startup.sh
+
 RUN chmod +x $STARTUPDIR/custom_startup.sh
 
 ######### End Customizations ###########
