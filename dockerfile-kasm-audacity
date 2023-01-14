@@ -10,7 +10,7 @@ WORKDIR $HOME
 
 
 RUN apt-get update \
-&& apt-get install -y xchat
+&& apt-get install -y audacity
 
 ##Custom start
 COPY ./src/ubuntu/install/audacity/custom_startup.sh  $STARTUPDIR/custom_startup.sh
