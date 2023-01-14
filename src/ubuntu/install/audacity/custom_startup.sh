@@ -1,4 +1,4 @@
-#!/usr/bin/env bashaudacity
+#!/usr/bin/env bash
 set -ex
 FORCE=$1
 
