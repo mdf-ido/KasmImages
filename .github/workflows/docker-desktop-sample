@@ -28,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./dockerfile-kasm-audacity
+          file: ./dockerfile-kasm-ctxdesktop
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/kasm_audacity:latest
