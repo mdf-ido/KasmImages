@@ -1,4 +1,4 @@
-name: Build
+name: DevSecOps Scan
 on:
   #push:
   #  branches:
