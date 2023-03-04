@@ -25,3 +25,4 @@ jobs:
           repository: mdf-ido/HL
           token: ${{ secrets.PAT }}
           event-type: doit
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
