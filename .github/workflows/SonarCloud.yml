@@ -19,7 +19,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: Trigger other repository's action
+  triggerAnotherReposWorkflow:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the other repository's workflow
         uses: peter-evans/repository-dispatch@v1
         with:
           repository: mdf-ido/HL
