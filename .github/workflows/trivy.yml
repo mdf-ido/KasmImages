@@ -8,13 +8,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build an image from Dockerfile
-        run: |
-          docker build -t dockerfile-kasm-xchat .
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
+          image-ref: 'docker.io/m05tr0/kasm_xchat:latest'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
